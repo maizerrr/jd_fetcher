@@ -3,18 +3,16 @@ from typing import Dict, List, Any, Union
 from models import Job, db
 from datetime import datetime
 
-# Import all fetchers
-from fetchers.linkedin_fetcher import LinkedInFetcher
-from fetchers.indeed_fetcher import IndeedFetcher
+# Import all fetchers (exclude demo fetchers for now)
+from fetchers.qube_rt_fetcher import QubeRTFetcher
 
 logger = logging.getLogger(__name__)
 
 class FetcherManager:
     def __init__(self):
-        # Register all fetchers here
+        # Replace demo fetchers with real implementation
         self.fetchers = [
-            LinkedInFetcher(),
-            IndeedFetcher()
+            QubeRTFetcher()
         ]
     
     def fetch_all_jobs(self) -> Dict[str, Union[List[str], Dict[str, str]]]:
@@ -53,39 +51,31 @@ class FetcherManager:
     
     def _store_jobs(self, site_name: str, jobs: List[Dict[str, Any]]) -> None:
         """
-        Store fetched jobs in the database.
+        Store fetched jobs in the database. Replaces all existing jobs for this site.
         Uses SQLAlchemy session with atomic transaction.
         """
         try:
-            # Start a new transaction
+            # Delete all existing jobs for this site first
+            delete_count = Job.query.filter_by(source_site=site_name).delete()
+            logger.info(f"Cleared {delete_count} existing jobs for {site_name}")
+            
+            # Add all new jobs
             for job_data in jobs:
-                # Check if job with this URL already exists
-                existing_job = Job.query.filter_by(url=job_data['url']).first()
-                
-                if existing_job:
-                    # Update existing job
-                    existing_job.title = job_data['title']
-                    existing_job.description = job_data['description']
-                    existing_job.posted_date = job_data['posted_date']
-                    existing_job.updated_time = datetime.utcnow()
-                else:
-                    # Create new job
-                    new_job = Job(
-                        title=job_data['title'],
-                        description=job_data['description'],
-                        source_site=job_data['source_site'],
-                        url=job_data['url'],
-                        posted_date=job_data['posted_date'],
-                        updated_time=datetime.utcnow()
-                    )
-                    db.session.add(new_job)
+                new_job = Job(
+                    title=job_data['title'],
+                    description=job_data['description'],
+                    source_site=site_name,  # Ensure consistency with fetcher site
+                    url=job_data['url'],
+                    posted_date=job_data['posted_date'],
+                    updated_time=datetime.utcnow()
+                )
+                db.session.add(new_job)
             
             # Commit the transaction
             db.session.commit()
-            logger.info(f"Successfully stored jobs from {site_name}")
-            
+            logger.info(f"Successfully stored {len(jobs)} new jobs from {site_name}")
+
         except Exception as e:
-            # Roll back the transaction on error
             db.session.rollback()
             logger.error(f"Error storing jobs from {site_name}: {str(e)}")
             raise
