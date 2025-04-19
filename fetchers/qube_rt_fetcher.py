@@ -1,6 +1,7 @@
 from datetime import datetime
 from .base_fetcher import BaseFetcher
 import json
+from urllib.parse import urlparse, parse_qs
 
 class QubeRTFetcher(BaseFetcher):
     def __init__(self):
@@ -19,11 +20,15 @@ class QubeRTFetcher(BaseFetcher):
                 # Extract metadata fields
                 metadata = {m['name']: m.get('value') for m in job.get('metadata', [])}
                 
+                original_url = job.get('absolute_url', '')
+                parsed_url = urlparse(original_url)
+                gh_jid = parse_qs(parsed_url.query).get('gh_jid', [None])[0]
+                
                 jobs.append({
                     'title': job.get('title', 'Unknown Title'),
                     'description': self._build_description(job, metadata),
                     'source_site': self.site_name,
-                    'url': job.get('absolute_url', ''),
+                    'url': f"https://www.qube-rt.com/careers/job?gh_jid={gh_jid}" if gh_jid else original_url,
                     'posted_date': self._parse_datetime(job.get('first_published')),
                     'updated_at': self._parse_datetime(job.get('updated_at'))
                 })
