@@ -11,36 +11,42 @@ A Python/Flask web application that scrapes job listings from multiple sites, st
 - Allows filtering by source site, search term, and date range
 - Extensible architecture for adding new job sites
 
-## Installation
+## Build
 
 1. Clone the repository:
    ```
-   git clone <repository-url>
+   git clone https://github.com/maizerrr/jd_fetcher.git
    cd jd_fetcher
    ```
 
-2. Create a virtual environment (optional but recommended):
-   ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. Install dependencies:
+2. Install dependencies:
    ```
    pip install -r requirements.txt
+   pip install pyinstaller
+   ```
+3. Run build command:
+   ```
+   pyinstaller --name jd_fetcher \
+   --add-data "templates/*:templates" \
+   --add-data "fetchers/*:fetchers" \
+   --add-data "services/*:services" \
+   --hidden-import "models" \
+   --hidden-import "routes" \
+   --hidden-import "extensions" \
+   --onefile \
+   --noconfirm \
+   app.py
    ```
 
 ## Usage
 
-1. Start the Flask application:
-   ```
-   python app.py
-   ```
+1. Download the execubale
 
-2. Open your web browser and navigate to:
+2. Launch the application:
    ```
-   http://localhost:5000
+   ./jd_fetcher
    ```
+   a new browser window should open with the application running.
 
 3. Use the web interface to:
    - View existing job listings
