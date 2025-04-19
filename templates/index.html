@@ -95,7 +95,10 @@
                 <tr>
                     <td>{{ job.title }}</td>
                     <td>
-                        <div class="job-description">{{ job.description }}</div>
+                        <div class="job-description" style="max-width: 640px; max-height: 320px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;" 
+                             data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="{{ job.description }}">
+                            {{ job.description|truncate(1000) }}
+                        </div>
                     </td>
                     <td>{{ job.source_site }}</td>
                     <td>{{ job.posted_date.strftime('%Y-%m-%d') if job.posted_date else 'Unknown' }}</td>
@@ -129,6 +132,9 @@
                 this.classList.toggle('job-description');
             });
         });
+        // Initialize Bootstrap tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
     });
 </script>
 {% endblock %}

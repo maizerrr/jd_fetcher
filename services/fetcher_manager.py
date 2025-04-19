@@ -5,6 +5,7 @@ from datetime import datetime
 
 # Import all fetchers (exclude demo fetchers for now)
 from fetchers.qube_rt_fetcher import QubeRTFetcher
+from fetchers.acadian_fetcher import AcadianAssetManagementFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -12,7 +13,8 @@ class FetcherManager:
     def __init__(self):
         # Replace demo fetchers with real implementation
         self.fetchers = [
-            QubeRTFetcher()
+            QubeRTFetcher(),
+            AcadianAssetManagementFetcher()
         ]
     
     def fetch_all_jobs(self) -> Dict[str, Union[List[str], Dict[str, str]]]:
