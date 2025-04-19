@@ -7,6 +7,7 @@ def register_routes(app):
     def export_jobs():
         source_site = request.args.get('source_site', '')
         search_term = request.args.get('search_term', '')
+        location = request.args.get('location', '')
 
         query = Job.query
         
@@ -14,6 +15,8 @@ def register_routes(app):
             query = query.filter(Job.source_site == source_site)
         if search_term:
             query = query.filter(Job.title.contains(search_term) | Job.description.contains(search_term))
+        if location:
+            query = query.filter(Job.location.contains(location))
 
         jobs = query.order_by(Job.updated_time.desc()).all()
 
@@ -31,7 +34,8 @@ def register_routes(app):
                 'Source Site': job.source_site,
                 'Posted Date': job.posted_date.strftime('%Y-%m-%d') if job.posted_date else '',
                 'Last Updated': job.updated_time.strftime('%Y-%m-%d %H:%M'),
-                'URL': job.url
+                'URL': job.url,
+                'Location': job.location
             } for job in jobs])
 
             output = BytesIO()
@@ -53,6 +57,7 @@ def register_routes(app):
     def index():
         source_site = request.args.get('source_site', '')
         search_term = request.args.get('search_term', '')
+        location = request.args.get('location', '')
         
         query = Job.query
         
@@ -61,6 +66,8 @@ def register_routes(app):
             
         if search_term:
             query = query.filter(Job.title.contains(search_term) | Job.description.contains(search_term))
+        if location:
+            query = query.filter(Job.location.contains(location))
         
         jobs = query.order_by(Job.updated_time.desc()).all()
         source_sites = [site[0] for site in db.session.query(Job.source_site).distinct().all() if site[0]]

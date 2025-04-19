@@ -30,7 +30,8 @@ class QubeRTFetcher(BaseFetcher):
                     'source_site': self.site_name,
                     'url': f"https://www.qube-rt.com/careers/job?gh_jid={gh_jid}" if gh_jid else original_url,
                     'posted_date': self._parse_datetime(job.get('first_published')),
-                    'updated_at': self._parse_datetime(job.get('updated_at'))
+                    'updated_at': self._parse_datetime(job.get('updated_at')),
+                    'location': job.get('location', {}).get('name', 'Unknown')
                 })
             except Exception as e:
                 print(f"Error parsing job {job.get('id')}: {str(e)}")

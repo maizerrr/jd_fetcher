@@ -25,7 +25,8 @@ class AcadianAssetManagementFetcher(BaseFetcher):
                     'description': self._clean_html_content(job.get('content', '')),
                     'source_site': self.site_name,
                     'url': f"https://www.acadian-asset.com/careers/open-positions?gh_jid={gh_jid}" if gh_jid else job.get('absolute_url', ''),
-                    'posted_date': self._parse_datetime(job.get('published_at'))
+                    'posted_date': self._parse_datetime(job.get('published_at')),
+                    'location': job.get('location', 'Unknown')
                 })
             except Exception as e:
                 print(f"Error parsing job {job.get('id')}: {str(e)}")

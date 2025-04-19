@@ -68,6 +68,7 @@ class FetcherManager:
                     description=job_data['description'],
                     source_site=site_name,  # Ensure consistency with fetcher site
                     url=job_data['url'],
+                    location=job_data['location'],
                     posted_date=job_data['posted_date'],
                     updated_time=datetime.utcnow()
                 )

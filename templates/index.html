@@ -26,6 +26,13 @@
                 <input type="text" class="form-control" id="search_term" name="search_term" 
                        placeholder="Job title or description" value="{{ filters.search_term }}">
             </div>
+
+            <!-- Location Search -->
+            <div class="col-md-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" id="location" name="location" 
+                       placeholder="Location" value="{{ filters.location }}">
+            </div>
             
             <!-- Date Range -->
             <div class="col-md-3">
@@ -67,6 +74,7 @@
                 <form action="{{ url_for('export_jobs') }}" method="GET" class="d-inline">
                     <input type="hidden" name="source_site" value="{{ filters.source_site }}">
                     <input type="hidden" name="search_term" value="{{ filters.search_term }}">
+                    <input type="hidden" name="location" value="{{ filters.location }}">
                     <button type="submit" class="btn btn-success">
                         Export to Excel
                     </button>
@@ -84,6 +92,7 @@
                 <th>Title</th>
                 <th>Description</th>
                 <th>Source</th>
+                <th>Location</th>
                 <th>Posted Date</th>
                 <th>Last Updated</th>
                 <th>Actions</th>
@@ -101,6 +110,7 @@
                         </div>
                     </td>
                     <td>{{ job.source_site }}</td>
+                    <td>{{ job.location }}</td>
                     <td>{{ job.posted_date.strftime('%Y-%m-%d') if job.posted_date else 'Unknown' }}</td>
                     <td>{{ job.updated_time.strftime('%Y-%m-%d %H:%M') }}</td>
                     <td>
@@ -114,7 +124,7 @@
                 {% endfor %}
             {% else %}
                 <tr>
-                    <td colspan="6" class="text-center">No jobs found. Try adjusting your filters or fetch new jobs.</td>
+                    <td colspan="7" class="text-center">No jobs found. Try adjusting your filters or fetch new jobs.</td>
                 </tr>
             {% endif %}
         </tbody>
