@@ -52,14 +52,17 @@ A Python/Flask web application that scrapes job listings from multiple sites, st
 ```
 ├── app.py                  # Main Flask application
 ├── config.py               # Configuration settings
+├── extensions.py           # Flask extensions
 ├── models.py               # Database models
 ├── routes.py               # Application routes
 ├── requirements.txt        # Python dependencies
 ├── fetchers/               # Job fetcher modules
 │   ├── __init__.py
+│   ├── acadian_fetcher.py  # Acadian implementation
 │   ├── base_fetcher.py     # Base fetcher class
+│   ├── indeed_fetcher.py   # Indeed implementation
 │   ├── linkedin_fetcher.py # LinkedIn implementation
-│   └── indeed_fetcher.py   # Indeed implementation
+│   └── qube_rt_fetcher.py  # QubeRT implementation
 ├── services/               # Application services
 │   ├── __init__.py
 │   └── fetcher_manager.py  # Manages job fetchers

@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from jinja2 import Environment
 from datetime import datetime
+from threading import Timer
 import logging
 import os
+import webbrowser
 
 from extensions import db
 
@@ -44,4 +46,5 @@ def create_app():
 
 if __name__ == '__main__':
     app = create_app()
-    app.run(debug=True)
+    Timer(1, lambda: webbrowser.open('http://127.0.0.1:5000')).start()
+    app.run(debug=False)  # Change debug to False for production
