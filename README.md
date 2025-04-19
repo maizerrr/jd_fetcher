@@ -40,7 +40,9 @@ A Python/Flask web application that scrapes job listings from multiple sites, st
 
 ## Usage
 
-1. Download the execubale
+1. <a href="https://github.com/maizerrr/jd_fetcher/releases">Download</a> the execubale according to your system:
+   - For Windows: `jd_fetcher_win_x86_64.exe`
+   - For macOS: `jd_fetcher_darwin_x86_64`
 
 2. Launch the application:
    ```
