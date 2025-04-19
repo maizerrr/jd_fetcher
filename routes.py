@@ -1,8 +1,54 @@
-from flask import render_template, request, redirect, url_for, flash
+from flask import render_template, request, redirect, url_for, flash, send_file
 from models import Job
 from extensions import db
 
 def register_routes(app):
+    @app.route('/export-jobs')
+    def export_jobs():
+        source_site = request.args.get('source_site', '')
+        search_term = request.args.get('search_term', '')
+
+        query = Job.query
+        
+        if source_site:
+            query = query.filter(Job.source_site == source_site)
+        if search_term:
+            query = query.filter(Job.title.contains(search_term) | Job.description.contains(search_term))
+
+        jobs = query.order_by(Job.updated_time.desc()).all()
+
+        if not jobs:
+            flash('No jobs to export', 'warning')
+            return redirect(url_for('index'))
+
+        try:
+            import pandas as pd
+            from io import BytesIO
+
+            df = pd.DataFrame([{
+                'Title': job.title,
+                'Description': job.description,
+                'Source Site': job.source_site,
+                'Posted Date': job.posted_date.strftime('%Y-%m-%d') if job.posted_date else '',
+                'Last Updated': job.updated_time.strftime('%Y-%m-%d %H:%M'),
+                'URL': job.url
+            } for job in jobs])
+
+            output = BytesIO()
+            df.to_excel(output, index=False, engine='openpyxl')
+            output.seek(0)
+
+            return send_file(
+                output,
+                mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                download_name='jobs_export.xlsx',
+                as_attachment=True
+            )
+        except Exception as e:
+            app.logger.error(f"Export failed: {str(e)}")
+            flash(f'Export failed: {str(e)}', 'error')
+            return redirect(url_for('index'))
+
     @app.route('/')
     def index():
         source_site = request.args.get('source_site', '')
