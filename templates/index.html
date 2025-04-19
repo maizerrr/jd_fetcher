@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}Job Listings{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Job Listings</h1>
+
+<!-- Filter Section -->
+<div class="filter-section mb-4">
+    <form method="get" action="{{ url_for('index') }}" id="filter-form">
+        <div class="row g-3">
+            <!-- Source Site Filter -->
+            <div class="col-md-3">
+                <label for="source_site" class="form-label">Source Site</label>
+                <select class="form-select" id="source_site" name="source_site">
+                    <option value="">All Sites</option>
+                    {% for site in source_sites %}
+                    <option value="{{ site }}" {% if filters.source_site == site %}selected{% endif %}>{{ site }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <!-- Search Term -->
+            <div class="col-md-3">
+                <label for="search_term" class="form-label">Search</label>
+                <input type="text" class="form-control" id="search_term" name="search_term" 
+                       placeholder="Job title or description" value="{{ filters.search_term }}">
+            </div>
+            
+            <!-- Date Range -->
+            <div class="col-md-3">
+                <label for="date_from" class="form-label">From Date</label>
+                <input type="date" class="form-control" id="date_from" name="date_from" value="{{ filters.date_from }}">
+            </div>
+            
+            <div class="col-md-3">
+                <label for="date_to" class="form-label">To Date</label>
+                <input type="date" class="form-control" id="date_to" name="date_to" value="{{ filters.date_to }}">
+            </div>
+            
+            <!-- Filter Button -->
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-primary mt-4">Apply Filters</button>
+                <a href="{{ url_for('index') }}" class="btn btn-secondary mt-4">Clear Filters</a>
+            </div>
+            
+            <!-- Fetch Jobs Button -->
+            <div class="col-md-6 text-end">
+                <div class="mb-4">
+                    <form action="{{ url_for('delete_jobs') }}" method="POST" class="d-inline">
+                        <button type="submit" class="btn btn-danger" 
+                                onclick="return confirm('This will delete ALL jobs. Are you sure?')">
+                            Delete All Jobs
+                        </button>
+                    </form>
+                    
+                    <form action="{{ url_for('fetch_jobs') }}" method="POST" class="d-inline ms-2">
+                        <button type="submit" class="btn btn-primary">
+                            Fetch New Jobs
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Jobs Table -->
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Source</th>
+                <th>Posted Date</th>
+                <th>Last Updated</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if jobs %}
+                {% for job in jobs %}
+                <tr>
+                    <td>{{ job.title }}</td>
+                    <td>
+                        <div class="job-description">{{ job.description }}</div>
+                    </td>
+                    <td>{{ job.source_site }}</td>
+                    <td>{{ job.posted_date.strftime('%Y-%m-%d') if job.posted_date else 'Unknown' }}</td>
+                    <td>{{ job.updated_time.strftime('%Y-%m-%d %H:%M') }}</td>
+                    <td>
+                        {% if job.url %}
+                        <a href="{{ job.url }}" target="_blank" class="btn btn-sm btn-primary">View</a>
+                        {% else %}
+                        <span class="text-muted">No link</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="6" class="text-center">No jobs found. Try adjusting your filters or fetch new jobs.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Simple JavaScript for expanding job descriptions -->
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Toggle job description expansion on click
+        const descriptions = document.querySelectorAll('.job-description');
+        descriptions.forEach(desc => {
+            desc.addEventListener('click', function() {
+                this.classList.toggle('job-description');
+            });
+        });
+    });
+</script>
+{% endblock %}
+{% endblock %}

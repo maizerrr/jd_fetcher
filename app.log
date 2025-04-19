@@ -1,0 +1,155 @@
+2025-04-19 17:12:06,722 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-19 17:12:06,722 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-19 17:12:06,724 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:12:07,167 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:12:07,179 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:13:21,136 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:13:21] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-04-19 17:13:21,173 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:13:21] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-04-19 17:13:21,174 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:13:21] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-04-19 17:13:21,255 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:13:21] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-04-19 17:13:21,318 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:13:21] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-19 17:15:02,199 - werkzeug - INFO -  * Detected change in '/Users/yumingtian/Documents/Dev/jd_fetcher/app.py', reloading
+2025-04-19 17:15:02,300 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:15:02,895 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:15:02,912 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:15:09,963 - werkzeug - INFO -  * Detected change in '/Users/yumingtian/Documents/Dev/jd_fetcher/models.py', reloading
+2025-04-19 17:15:10,042 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:16:25,370 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-19 17:16:25,370 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-19 17:16:25,370 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:16:25,791 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:16:25,799 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:17:28,469 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:17:28] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-04-19 17:17:28,498 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:17:28] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-04-19 17:17:28,501 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:17:28] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-04-19 17:17:28,510 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:17:28] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-04-19 17:17:28,542 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:17:28] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-19 17:20:00,003 - werkzeug - INFO -  * Detected change in '/Users/yumingtian/Documents/Dev/jd_fetcher/app.py', reloading
+2025-04-19 17:20:00,129 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:20:00,995 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:20:01,006 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:20:19,125 - werkzeug - INFO -  * Detected change in '/Users/yumingtian/Documents/Dev/jd_fetcher/routes.py', reloading
+2025-04-19 17:20:19,223 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:20:19,569 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:20:19,577 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:20:37,551 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-19 17:20:37,551 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-19 17:20:37,551 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:20:37,890 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:20:37,896 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:20:53,188 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:20:53] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-04-19 17:20:53,211 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:20:53] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-04-19 17:20:53,216 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:20:53] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-04-19 17:20:53,224 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:20:53] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-04-19 17:20:53,262 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:20:53] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-19 17:22:31,555 - werkzeug - INFO -  * Detected change in '/Users/yumingtian/Documents/Dev/jd_fetcher/routes.py', reloading
+2025-04-19 17:22:31,628 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:22:32,252 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:22:32,263 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:22:52,467 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-19 17:22:52,468 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-19 17:22:52,468 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:22:52,804 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:22:52,811 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:23:13,166 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:23:13] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-04-19 17:23:13,182 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:23:13] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-04-19 17:23:13,185 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:23:13] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-04-19 17:23:13,197 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:23:13] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-19 17:23:13,204 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:23:13] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-19 17:25:09,571 - werkzeug - INFO -  * Detected change in '/Users/yumingtian/Documents/Dev/jd_fetcher/routes.py', reloading
+2025-04-19 17:25:09,760 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:25:11,102 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:25:11,198 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:26:28,956 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-19 17:26:28,956 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-19 17:26:28,958 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:26:29,736 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:26:29,760 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:26:41,102 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:26:41] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-04-19 17:26:41,118 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:26:41] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-04-19 17:26:41,121 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:26:41] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-04-19 17:26:41,132 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:26:41] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-19 17:26:41,138 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:26:41] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-19 17:27:39,316 - werkzeug - INFO -  * Detected change in '/Users/yumingtian/Documents/Dev/jd_fetcher/app.py', reloading
+2025-04-19 17:27:39,447 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:27:40,921 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:27:40,945 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:27:41,970 - werkzeug - INFO -  * Detected change in '/Users/yumingtian/Documents/Dev/jd_fetcher/app.py', reloading
+2025-04-19 17:27:42,198 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:27:43,437 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:27:43,462 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:29:13,329 - werkzeug - INFO -  * Detected change in '/Users/yumingtian/Documents/Dev/jd_fetcher/app.py', reloading
+2025-04-19 17:29:13,561 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:33:17,600 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-19 17:33:17,600 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-19 17:33:17,601 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:33:18,109 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:33:18,119 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:33:20,550 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:33:20] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-04-19 17:33:20,568 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:33:20] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-04-19 17:33:20,572 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:33:20] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-04-19 17:33:20,586 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:33:20] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-19 17:33:20,603 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:33:20] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-19 17:35:22,759 - werkzeug - INFO -  * Detected change in '/Users/yumingtian/Documents/Dev/jd_fetcher/app.py', reloading
+2025-04-19 17:35:23,029 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:35:24,525 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:35:24,549 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:35:49,747 - werkzeug - INFO -  * Detected change in '/Users/yumingtian/Documents/Dev/jd_fetcher/app.py', reloading
+2025-04-19 17:35:50,080 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:35:51,530 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:35:51,554 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:37:07,225 - werkzeug - INFO -  * Detected change in '/Users/yumingtian/Documents/Dev/jd_fetcher/routes.py', reloading
+2025-04-19 17:37:07,601 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:37:09,502 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:37:09,546 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:37:43,920 - werkzeug - INFO -  * Detected change in '/Users/yumingtian/Documents/Dev/jd_fetcher/routes.py', reloading
+2025-04-19 17:37:44,220 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:37:46,046 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:37:46,077 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:41:15,603 - werkzeug - INFO -  * Detected change in '/Users/yumingtian/Documents/Dev/jd_fetcher/routes.py', reloading
+2025-04-19 17:41:15,967 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:41:18,116 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:41:18,139 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:41:19,171 - werkzeug - INFO -  * Detected change in '/Users/yumingtian/Documents/Dev/jd_fetcher/routes.py', reloading
+2025-04-19 17:41:19,667 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:41:21,220 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:41:21,242 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:45:23,230 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-19 17:45:23,230 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-19 17:45:23,231 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:45:23,549 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:45:23,556 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:45:27,021 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:45:27] "GET / HTTP/1.1" 200 -
+2025-04-19 17:45:27,260 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:45:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-19 17:55:39,037 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-19 17:55:39,037 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-19 17:55:39,038 - werkzeug - INFO -  * Restarting with stat
+2025-04-19 17:55:39,370 - werkzeug - WARNING -  * Debugger is active!
+2025-04-19 17:55:39,377 - werkzeug - INFO -  * Debugger PIN: 562-077-967
+2025-04-19 17:56:00,975 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:56:00] "GET / HTTP/1.1" 200 -
+2025-04-19 17:56:06,628 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:56:06] "GET /?source_site=&search_term=&date_from=&date_to= HTTP/1.1" 200 -
+2025-04-19 17:56:12,115 - services.fetcher_manager - INFO - Starting job fetch from LinkedIn
+2025-04-19 17:56:12,115 - fetchers.base_fetcher - INFO - Fetching jobs from LinkedIn at https://www.linkedin.com/jobs/search/
+2025-04-19 17:56:13,677 - services.fetcher_manager - INFO - Successfully stored jobs from LinkedIn
+2025-04-19 17:56:13,677 - services.fetcher_manager - INFO - Successfully fetched 0 jobs from LinkedIn
+2025-04-19 17:56:13,677 - services.fetcher_manager - INFO - Starting job fetch from Indeed
+2025-04-19 17:56:13,677 - fetchers.base_fetcher - INFO - Fetching jobs from Indeed at https://www.indeed.com/jobs
+2025-04-19 17:56:13,958 - fetchers.base_fetcher - WARNING - Attempt 1 failed for Indeed: 403 Client Error: Forbidden for url: https://www.indeed.com/jobs
+2025-04-19 17:56:13,958 - fetchers.base_fetcher - INFO - Fetching jobs from Indeed at https://www.indeed.com/jobs
+2025-04-19 17:56:14,211 - fetchers.base_fetcher - WARNING - Attempt 2 failed for Indeed: 403 Client Error: Forbidden for url: https://www.indeed.com/jobs
+2025-04-19 17:56:14,211 - fetchers.base_fetcher - INFO - Fetching jobs from Indeed at https://www.indeed.com/jobs
+2025-04-19 17:56:14,468 - fetchers.base_fetcher - WARNING - Attempt 3 failed for Indeed: 403 Client Error: Forbidden for url: https://www.indeed.com/jobs
+2025-04-19 17:56:14,468 - fetchers.base_fetcher - ERROR - Failed to fetch jobs from Indeed after 3 attempts
+2025-04-19 17:56:14,468 - services.fetcher_manager - ERROR - Error fetching jobs from Indeed: 403 Client Error: Forbidden for url: https://www.indeed.com/jobs
+2025-04-19 17:56:14,469 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:56:14] "[32mPOST /fetch-jobs HTTP/1.1[0m" 302 -
+2025-04-19 17:56:14,478 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:56:14] "GET / HTTP/1.1" 200 -
+2025-04-19 17:56:27,568 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:56:27] "GET / HTTP/1.1" 200 -
+2025-04-19 17:56:38,590 - werkzeug - INFO - 127.0.0.1 - - [19/Apr/2025 17:56:38] "GET / HTTP/1.1" 200 -
