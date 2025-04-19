@@ -39,30 +39,34 @@
             </div>
             
             <!-- Filter Button -->
+            <!-- Filter Section -->
             <div class="col-md-6">
                 <button type="submit" class="btn btn-primary mt-4">Apply Filters</button>
                 <a href="{{ url_for('index') }}" class="btn btn-secondary mt-4">Clear Filters</a>
             </div>
-            
-            <!-- Fetch Jobs Button -->
-            <div class="col-md-6 text-end">
-                <div class="mb-4">
-                    <form action="{{ url_for('delete_jobs') }}" method="POST" class="d-inline">
-                        <button type="submit" class="btn btn-danger" 
-                                onclick="return confirm('This will delete ALL jobs. Are you sure?')">
-                            Delete All Jobs
-                        </button>
-                    </form>
-                    
-                    <form action="{{ url_for('fetch_jobs') }}" method="POST" class="d-inline ms-2">
-                        <button type="submit" class="btn btn-primary">
-                            Fetch New Jobs
-                        </button>
-                    </form>
-                </div>
+        </div> <!-- Close row g-3 -->
+    </form> <!-- Close filter form -->
+</div> <!-- Close filter-section -->
+
+<!-- Action Buttons Section -->
+<div class="action-section mb-4 mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="d-flex gap-2">
+                <form action="{{ url_for('delete_jobs') }}" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-danger" 
+                            onclick="return confirm('This will delete ALL jobs. Are you sure?')">
+                        Delete All Jobs
+                    </button>
+                </form>
+                <form action="{{ url_for('fetch_jobs') }}" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-primary">
+                        Fetch New Jobs
+                    </button>
+                </form>
             </div>
         </div>
-    </form>
+    </div>
 </div>
 
 <!-- Jobs Table -->
