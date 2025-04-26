@@ -26,7 +26,6 @@ class QuantedgeFetcher(BaseFetcher):
             href = link['href']
             # Check for career pattern and valid link structure
             if re.match(r'https?://www\.quantedge\.com/careers/.+', href):
-                print(f"Link: {href}")
                 try:
                     job_url = urljoin(self.url, link['href'])
                     job_page = requests.get(job_url, headers=self.headers, timeout=self.timeout)
