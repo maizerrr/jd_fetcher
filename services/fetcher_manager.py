@@ -7,6 +7,7 @@ from datetime import datetime
 from fetchers.qube_rt_fetcher import QubeRTFetcher
 from fetchers.acadian_fetcher import AcadianAssetManagementFetcher
 from fetchers.northrock_fetcher import NorthRockFetcher
+from fetchers.quantedge_fetcher import QuantedgeFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -16,7 +17,8 @@ class FetcherManager:
         self.fetchers = [
             QubeRTFetcher(),
             AcadianAssetManagementFetcher(),
-            NorthRockFetcher()
+            NorthRockFetcher(),
+            QuantedgeFetcher()
         ]
     
     def fetch_all_jobs(self) -> Dict[str, Union[List[str], Dict[str, str]]]:
