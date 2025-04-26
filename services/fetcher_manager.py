@@ -10,6 +10,7 @@ from fetchers.northrock_fetcher import NorthRockFetcher
 from fetchers.quantedge_fetcher import QuantedgeFetcher
 from fetchers.lmr_partners_fetcher import LMRPartnersFetcher
 from fetchers.graham_capital_fetcher import GrahamCapitalFetcher
+from fetchers.winton_capital_fetcher import WintonCapitalFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -22,7 +23,8 @@ class FetcherManager:
             # NorthRockFetcher(),
             # QuantedgeFetcher(),
             # LMRPartnersFetcher(),
-            GrahamCapitalFetcher()
+            # GrahamCapitalFetcher(),
+            WintonCapitalFetcher()
         ]
     
     def fetch_all_jobs(self) -> Dict[str, Union[List[str], Dict[str, str]]]:
