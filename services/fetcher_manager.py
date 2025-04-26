@@ -9,6 +9,7 @@ from fetchers.acadian_fetcher import AcadianAssetManagementFetcher
 from fetchers.northrock_fetcher import NorthRockFetcher
 from fetchers.quantedge_fetcher import QuantedgeFetcher
 from fetchers.lmr_partners_fetcher import LMRPartnersFetcher
+from fetchers.graham_capital_fetcher import GrahamCapitalFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -16,11 +17,12 @@ class FetcherManager:
     def __init__(self):
         # Replace demo fetchers with real implementation
         self.fetchers = [
-            QubeRTFetcher(),
-            AcadianAssetManagementFetcher(),
-            NorthRockFetcher(),
-            QuantedgeFetcher(),
-            LMRPartnersFetcher()
+            # QubeRTFetcher(),
+            # AcadianAssetManagementFetcher(),
+            # NorthRockFetcher(),
+            # QuantedgeFetcher(),
+            # LMRPartnersFetcher(),
+            GrahamCapitalFetcher()
         ]
     
     def fetch_all_jobs(self) -> Dict[str, Union[List[str], Dict[str, str]]]:
