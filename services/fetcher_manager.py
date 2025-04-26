@@ -11,6 +11,7 @@ from fetchers.quantedge_fetcher import QuantedgeFetcher
 from fetchers.lmr_partners_fetcher import LMRPartnersFetcher
 from fetchers.graham_capital_fetcher import GrahamCapitalFetcher
 from fetchers.winton_capital_fetcher import WintonCapitalFetcher
+from fetchers.aspect_capital_fetcher import AspectCapitalFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -24,7 +25,8 @@ class FetcherManager:
             # QuantedgeFetcher(),
             # LMRPartnersFetcher(),
             # GrahamCapitalFetcher(),
-            WintonCapitalFetcher()
+            # WintonCapitalFetcher(),
+            AspectCapitalFetcher()
         ]
     
     def fetch_all_jobs(self) -> Dict[str, Union[List[str], Dict[str, str]]]:
