@@ -14,6 +14,7 @@ from fetchers.lmr_partners_fetcher import LMRPartnersFetcher
 from fetchers.graham_capital_fetcher import GrahamCapitalFetcher
 from fetchers.winton_capital_fetcher import WintonCapitalFetcher
 from fetchers.aspect_capital_fetcher import AspectCapitalFetcher
+from fetchers.viking_global_fetcher import VikingGlobalFetcher # Add import for the new fetcher
 
 logger = logging.getLogger(__name__)
 
@@ -22,14 +23,15 @@ class FetcherManager:
         self.app = app # Store the app instance
         # Replace demo fetchers with real implementation
         self.fetchers = [
-            QubeRTFetcher(),
-            AcadianAssetManagementFetcher(),
-            NorthRockFetcher(),
-            QuantedgeFetcher(),
-            LMRPartnersFetcher(),
-            GrahamCapitalFetcher(),
-            WintonCapitalFetcher(),
-            AspectCapitalFetcher()
+            # QubeRTFetcher(),
+            # AcadianAssetManagementFetcher(),
+            # NorthRockFetcher(),
+            # QuantedgeFetcher(),
+            # LMRPartnersFetcher(),
+            # GrahamCapitalFetcher(),
+            # WintonCapitalFetcher(),
+            # AspectCapitalFetcher(),
+            VikingGlobalFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
