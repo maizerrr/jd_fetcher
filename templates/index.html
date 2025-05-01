@@ -3,6 +3,24 @@
 {% block title %}Job Listings{% endblock %}
 
 {% block content %}
+<style>
+    .loader {
+        border: 5px solid #f3f3f3; /* Light grey */
+        border-top: 5px solid #3498db; /* Blue */
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 1s linear infinite;
+        display: none; /* Hidden by default */
+        margin-left: 10px; /* Add some space */
+        vertical-align: middle;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
 <h1 class="mb-4">Job Listings</h1>
 
 <!-- Filter Section -->
@@ -66,9 +84,10 @@
                         Delete All Jobs
                     </button>
                 </form>
-                <form action="{{ url_for('fetch_jobs') }}" method="POST" class="d-inline">
+                <form id="fetch-jobs-form" action="{{ url_for('fetch_jobs') }}" method="POST" class="d-inline">
                     <button type="submit" class="btn btn-primary">
                         Fetch New Jobs
+                        <div class="loader" id="loading-indicator"></div>
                     </button>
                 </form>
                 <form action="{{ url_for('export_jobs') }}" method="GET" class="d-inline">
@@ -145,6 +164,12 @@
         // Initialize Bootstrap tooltips
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    });
+
+    document.getElementById('fetch-jobs-form').addEventListener('submit', function() {
+        document.getElementById('loading-indicator').style.display = 'inline-block';
+        // Optionally disable the button to prevent multiple clicks
+        this.querySelector('button[type="submit"]').disabled = true;
     });
 </script>
 {% endblock %}
