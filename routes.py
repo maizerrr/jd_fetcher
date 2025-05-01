@@ -87,7 +87,7 @@ def register_routes(app):
         try:
             from services.fetcher_manager import FetcherManager
             
-            fetcher_manager = FetcherManager()
+            fetcher_manager = FetcherManager(app)
             result = fetcher_manager.fetch_all_jobs()
             
             # Display success/failure messages
