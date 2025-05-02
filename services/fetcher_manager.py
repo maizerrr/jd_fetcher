@@ -20,6 +20,7 @@ from fetchers.millennium_fetcher import MillenniumFetcher
 from fetchers.citadel_securities_fetcher import CitadelSecuritiesFetcher
 from fetchers.grasshope_fetcher import GrasshopeFetcher
 from fetchers.jane_street_fetcher import JaneStreetFetcher
+from fetchers.worldquant_fetcher import WorldQuantFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -41,7 +42,8 @@ class FetcherManager:
             # MillenniumFetcher(),
             # GrasshopeFetcher(),
             # CitadelSecuritiesFetcher(),
-            JaneStreetFetcher()
+            # JaneStreetFetcher(),
+            WorldQuantFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
