@@ -1,8 +1,9 @@
 import logging
 import concurrent.futures
 from typing import Dict, List, Any, Union, Tuple, Optional
+from datetime import datetime, timedelta
+from sqlalchemy import func
 from models import Job, db
-from datetime import datetime
 from flask import Flask
 
 # Import all fetchers (exclude demo fetchers for now)
@@ -55,6 +56,15 @@ class FetcherManager:
         try:
             # Use Flask app context for the entire fetch and store operation
             with self.app.app_context():
+                # Check last update time
+                min_update = db.session.query(func.min(Job.updated_time))\
+                    .filter_by(source_site=site_name)\
+                    .scalar()
+
+                if min_update and (datetime.utcnow() - min_update) < timedelta(minutes=self.app.config.get('CACHE_THRESHOLD_MINUTES', 5)):
+                    logger.info(f"Skipping {site_name} - all records updated within threshold (oldest update {datetime.utcnow() - min_update} ago)")
+                    return site_name, None
+
                 logger.info(f"Starting job fetch from {site_name}")
                 jobs = fetcher.fetch_jobs()
                 self._store_jobs(site_name, jobs)
