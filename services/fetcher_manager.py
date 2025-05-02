@@ -26,6 +26,7 @@ from fetchers.optiver_fetcher import OptiverFetcher
 from fetchers.tower_research_fetcher import TowerResearchFetcher
 from fetchers.rockbund_fetcher import RockBundFetcher
 from fetchers.trexquant_fetcher import TrexQuantFetcher
+from fetchers.jumptrading_fetcher import JumpTradingFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -52,7 +53,8 @@ class FetcherManager:
             # OptiverFetcher(),
             # TowerResearchFetcher(),
             # RockBundFetcher(),
-            TrexQuantFetcher()
+            # TrexQuantFetcher(),
+            JumpTradingFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
