@@ -24,6 +24,7 @@ from fetchers.jane_street_fetcher import JaneStreetFetcher
 from fetchers.worldquant_fetcher import WorldQuantFetcher
 from fetchers.optiver_fetcher import OptiverFetcher
 from fetchers.tower_research_fetcher import TowerResearchFetcher
+from fetchers.rockbund_fetcher import RockBundFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -48,7 +49,8 @@ class FetcherManager:
             # JaneStreetFetcher(),
             # WorldQuantFetcher(),
             # OptiverFetcher(),
-            TowerResearchFetcher()
+            # TowerResearchFetcher(),
+            RockBundFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
