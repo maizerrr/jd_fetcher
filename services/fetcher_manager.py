@@ -31,21 +31,21 @@ class FetcherManager:
         self.app = app # Store the app instance
         # Replace demo fetchers with real implementation
         self.fetchers = [
-            # QubeRTFetcher(),
-            # AcadianAssetManagementFetcher(),
-            # NorthRockFetcher(),
-            # QuantedgeFetcher(),
-            # LMRPartnersFetcher(),
-            # GrahamCapitalFetcher(),
-            # WintonCapitalFetcher(),
-            # AspectCapitalFetcher(),
-            # VikingGlobalFetcher(),
-            # SusquehannaInvestmentFetcher(),
-            # MillenniumFetcher(),
-            # GrasshopeFetcher(),
-            # CitadelSecuritiesFetcher(),
-            # JaneStreetFetcher(),
-            # WorldQuantFetcher(),
+            QubeRTFetcher(),
+            AcadianAssetManagementFetcher(),
+            NorthRockFetcher(),
+            QuantedgeFetcher(),
+            LMRPartnersFetcher(),
+            GrahamCapitalFetcher(),
+            WintonCapitalFetcher(),
+            AspectCapitalFetcher(),
+            VikingGlobalFetcher(),
+            SusquehannaInvestmentFetcher(),
+            MillenniumFetcher(),
+            GrasshopeFetcher(),
+            CitadelSecuritiesFetcher(),
+            JaneStreetFetcher(),
+            WorldQuantFetcher(),
             OptiverFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed

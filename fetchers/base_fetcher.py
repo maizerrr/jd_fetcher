@@ -22,8 +22,12 @@ class BaseFetcher:
         Fetches job listings from the site and returns parsed job data.
         Returns list of job dicts or raises exception.
         """
-        html = self._get_html()
-        return self.parse_jobs(html)
+        try:
+            html = self._get_html()
+            return self.parse_jobs(html)
+        except Exception as e:
+            logger.error(f"Error fetching jobs from {self.site_name}: {str(e)}")
+            raise
     
     def _get_html(self) -> str:
         """
