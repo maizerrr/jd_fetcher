@@ -17,6 +17,7 @@ from fetchers.aspect_capital_fetcher import AspectCapitalFetcher
 from fetchers.viking_global_fetcher import VikingGlobalFetcher
 from fetchers.susquehanna_investment_fetcher import SusquehannaInvestmentFetcher
 from fetchers.millennium_fetcher import MillenniumFetcher
+from fetchers.citadel_securities_fetcher import CitadelSecuritiesFetcher
 from fetchers.grasshope_fetcher import GrasshopeFetcher
 
 logger = logging.getLogger(__name__)
@@ -37,7 +38,8 @@ class FetcherManager:
             # VikingGlobalFetcher(),
             # SusquehannaInvestmentFetcher(),
             # MillenniumFetcher(),
-            GrasshopeFetcher()
+            # GrasshopeFetcher(),
+            CitadelSecuritiesFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
