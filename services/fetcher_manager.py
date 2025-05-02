@@ -19,6 +19,7 @@ from fetchers.susquehanna_investment_fetcher import SusquehannaInvestmentFetcher
 from fetchers.millennium_fetcher import MillenniumFetcher
 from fetchers.citadel_securities_fetcher import CitadelSecuritiesFetcher
 from fetchers.grasshope_fetcher import GrasshopeFetcher
+from fetchers.jane_street_fetcher import JaneStreetFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -39,7 +40,8 @@ class FetcherManager:
             # SusquehannaInvestmentFetcher(),
             # MillenniumFetcher(),
             # GrasshopeFetcher(),
-            CitadelSecuritiesFetcher()
+            # CitadelSecuritiesFetcher(),
+            JaneStreetFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
