@@ -23,6 +23,7 @@ from fetchers.grasshope_fetcher import GrasshopeFetcher
 from fetchers.jane_street_fetcher import JaneStreetFetcher
 from fetchers.worldquant_fetcher import WorldQuantFetcher
 from fetchers.optiver_fetcher import OptiverFetcher
+from fetchers.tower_research_fetcher import TowerResearchFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -31,22 +32,23 @@ class FetcherManager:
         self.app = app # Store the app instance
         # Replace demo fetchers with real implementation
         self.fetchers = [
-            QubeRTFetcher(),
-            AcadianAssetManagementFetcher(),
-            NorthRockFetcher(),
-            QuantedgeFetcher(),
-            LMRPartnersFetcher(),
-            GrahamCapitalFetcher(),
-            WintonCapitalFetcher(),
-            AspectCapitalFetcher(),
-            VikingGlobalFetcher(),
-            SusquehannaInvestmentFetcher(),
-            MillenniumFetcher(),
-            GrasshopeFetcher(),
-            CitadelSecuritiesFetcher(),
-            JaneStreetFetcher(),
-            WorldQuantFetcher(),
-            OptiverFetcher()
+            # QubeRTFetcher(),
+            # AcadianAssetManagementFetcher(),
+            # NorthRockFetcher(),
+            # QuantedgeFetcher(),
+            # LMRPartnersFetcher(),
+            # GrahamCapitalFetcher(),
+            # WintonCapitalFetcher(),
+            # AspectCapitalFetcher(),
+            # VikingGlobalFetcher(),
+            # SusquehannaInvestmentFetcher(),
+            # MillenniumFetcher(),
+            # GrasshopeFetcher(),
+            # CitadelSecuritiesFetcher(),
+            # JaneStreetFetcher(),
+            # WorldQuantFetcher(),
+            # OptiverFetcher(),
+            TowerResearchFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
