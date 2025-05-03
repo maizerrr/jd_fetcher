@@ -27,6 +27,7 @@ from fetchers.tower_research_fetcher import TowerResearchFetcher
 from fetchers.rockbund_fetcher import RockBundFetcher
 from fetchers.trexquant_fetcher import TrexQuantFetcher
 from fetchers.jumptrading_fetcher import JumpTradingFetcher
+from fetchers.akuna_capital_fetcher import AkunaCapitalFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -54,7 +55,8 @@ class FetcherManager:
             # TowerResearchFetcher(),
             # RockBundFetcher(),
             # TrexQuantFetcher(),
-            JumpTradingFetcher()
+            # JumpTradingFetcher(),
+            AkunaCapitalFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
