@@ -11,3 +11,4 @@ instance/
 *.spec
 build/
 dist/
+myenv/
