@@ -30,6 +30,7 @@ from fetchers.jumptrading_fetcher import JumpTradingFetcher
 from fetchers.akuna_capital_fetcher import AkunaCapitalFetcher
 from fetchers.flow_trader_fetcher import FlowTraderFetcher
 from fetchers.five_rings_fetcher import FiveRingsFetcher
+from fetchers.mako_fetcher import MakoFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -60,7 +61,8 @@ class FetcherManager:
             # JumpTradingFetcher(),
             # AkunaCapitalFetcher(),
             # FlowTraderFetcher(),
-            FiveRingsFetcher()
+            # FiveRingsFetcher(),
+            MakoFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
