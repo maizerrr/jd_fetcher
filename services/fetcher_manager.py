@@ -62,7 +62,8 @@ class FetcherManager:
             # AkunaCapitalFetcher(),
             # FlowTraderFetcher(),
             # FiveRingsFetcher(),
-            MakoFetcher()
+            MakoFetcher(),
+            
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
