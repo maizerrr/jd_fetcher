@@ -32,7 +32,7 @@ from fetchers.flow_trader_fetcher import FlowTraderFetcher
 from fetchers.five_rings_fetcher import FiveRingsFetcher
 from fetchers.mako_fetcher import MakoFetcher
 from fetchers.maven_securities_fetcher import MavenSecuritiesFetcher
-from fetchers.imc_trading_fetcher import IMCTradingFetcher
+from fetchers.alphagrep_fetcher import AlphagrepFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -66,6 +66,7 @@ class FetcherManager:
             # FiveRingsFetcher(),
             # MakoFetcher(),
             # MavenSecuritiesFetcher(),
+            AlphagrepFetcher(),
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
