@@ -29,6 +29,7 @@ from fetchers.trexquant_fetcher import TrexQuantFetcher
 from fetchers.jumptrading_fetcher import JumpTradingFetcher
 from fetchers.akuna_capital_fetcher import AkunaCapitalFetcher
 from fetchers.flow_trader_fetcher import FlowTraderFetcher
+from fetchers.five_rings_fetcher import FiveRingsFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -58,7 +59,8 @@ class FetcherManager:
             # TrexQuantFetcher(),
             # JumpTradingFetcher(),
             # AkunaCapitalFetcher(),
-            FlowTraderFetcher()
+            # FlowTraderFetcher(),
+            FiveRingsFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
