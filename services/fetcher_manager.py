@@ -31,6 +31,7 @@ from fetchers.akuna_capital_fetcher import AkunaCapitalFetcher
 from fetchers.flow_trader_fetcher import FlowTraderFetcher
 from fetchers.five_rings_fetcher import FiveRingsFetcher
 from fetchers.mako_fetcher import MakoFetcher
+from fetchers.maven_securities_fetcher import MavenSecuritiesFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -62,8 +63,8 @@ class FetcherManager:
             # AkunaCapitalFetcher(),
             # FlowTraderFetcher(),
             # FiveRingsFetcher(),
-            MakoFetcher(),
-            
+            # MakoFetcher(),
+            MavenSecuritiesFetcher(),
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
