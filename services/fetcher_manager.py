@@ -34,6 +34,7 @@ from fetchers.balyansy_asset_management_fetcher import BalyansyAssetManagementFe
 from fetchers.manahl_fetcher import ManAHLFetcher
 from fetchers.verition_capital_fetcher import VeritionCapitalFetcher
 from fetchers.imc_trading_fetcher import IMCTradingFetcher
+from fetchers.engineersgate_fetcher import EngineersGateFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -68,7 +69,8 @@ class FetcherManager:
             # BalyansyAssetManagementFetcher(),
             # ManAHLFetcher(),
             # VeritionCapitalFetcher(),
-            IMCTradingFetcher()
+            # IMCTradingFetcher(),
+            EngineersGateFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
