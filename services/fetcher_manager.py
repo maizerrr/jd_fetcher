@@ -35,6 +35,7 @@ from fetchers.manahl_fetcher import ManAHLFetcher
 from fetchers.verition_capital_fetcher import VeritionCapitalFetcher
 from fetchers.imc_trading_fetcher import IMCTradingFetcher
 from fetchers.engineersgate_fetcher import EngineersGateFetcher
+from fetchers.radix_trading_fetcher import RadixTradingFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -70,7 +71,8 @@ class FetcherManager:
             # ManAHLFetcher(),
             # VeritionCapitalFetcher(),
             # IMCTradingFetcher(),
-            EngineersGateFetcher()
+            # EngineersGateFetcher(),
+            RadixTradingFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
