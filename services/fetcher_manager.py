@@ -33,6 +33,7 @@ from fetchers.eclipse_trading_fetcher import EclipseTradingFetcher
 from fetchers.balyansy_asset_management_fetcher import BalyansyAssetManagementFetcher
 from fetchers.manahl_fetcher import ManAHLFetcher
 from fetchers.verition_capital_fetcher import VeritionCapitalFetcher
+from fetchers.imc_trading_fetcher import IMCTradingFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -66,7 +67,8 @@ class FetcherManager:
             # EclipseTradingFetcher(),
             # BalyansyAssetManagementFetcher(),
             # ManAHLFetcher(),
-            VeritionCapitalFetcher(),
+            # VeritionCapitalFetcher(),
+            IMCTradingFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
