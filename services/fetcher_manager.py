@@ -46,6 +46,7 @@ from fetchers.ap_capital_fetcher import APCapitalFetcher
 from fetchers.bluecrest_capital_fetcher import BlueCrestCapitalFetcher
 from fetchers.virtus_investment_fetcher import VirtusInvestmentPartnersFetcher
 from fetchers.hudson_river_trading_fetcher import HudsonRiverTradingFetcher
+from fetchers.point72_fetcher import Point72Fetcher
 
 logger = logging.getLogger(__name__)
 
@@ -92,7 +93,8 @@ class FetcherManager:
             # APCapitalFetcher(),
             # BlueCrestCapitalFetcher(),
             # VirtusInvestmentPartnersFetcher(),
-            HudsonRiverTradingFetcher()
+            # HudsonRiverTradingFetcher(),
+            Point72Fetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
@@ -119,7 +121,7 @@ class FetcherManager:
         except Exception as e:
             error_message = str(e)
             # Log error outside the explicit context, relying on the outer context if needed
-            logger.error(f"Error processing jobs from {site_name}: {error_message}")
+            logger.error(f"Error processing jobs from {site_name}: {error_message}", exc_info=True)
             return site_name, error_message # Return site name and error message
 
     def fetch_all_jobs(self) -> Dict[str, Union[List[str], Dict[str, str]]]:
