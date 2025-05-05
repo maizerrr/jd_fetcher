@@ -38,6 +38,7 @@ from fetchers.engineersgate_fetcher import EngineersGateFetcher
 from fetchers.radix_trading_fetcher import RadixTradingFetcher
 from fetchers.panagora_fetcher import PanAgoraFetcher
 from fetchers.drw_fetcher import DRWFetcher
+from fetchers.deshaw_fetcher import DEShawFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -76,7 +77,8 @@ class FetcherManager:
             # EngineersGateFetcher(),
             # RadixTradingFetcher(),
             # PanAgoraFetcher(),
-            DRWFetcher()
+            # DRWFetcher(),
+            DEShawFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
