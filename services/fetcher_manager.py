@@ -44,6 +44,7 @@ from fetchers.brevanhoward_fetcher import BrevanHowardFetcher
 from fetchers.yintercept_fetcher import YInterceptFetcher
 from fetchers.ap_capital_fetcher import APCapitalFetcher
 from fetchers.bluecrest_capital_fetcher import BlueCrestCapitalFetcher
+from fetchers.virtus_investment_fetcher import VirtusInvestmentPartnersFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -88,7 +89,8 @@ class FetcherManager:
             # BrevanHowardFetcher(),
             # YInterceptFetcher(),
             # APCapitalFetcher(),
-            BlueCrestCapitalFetcher()
+            # BlueCrestCapitalFetcher(),
+            VirtusInvestmentPartnersFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
