@@ -43,6 +43,7 @@ from fetchers.schonfeld_fetcher import SchonfeldFetcher
 from fetchers.brevanhoward_fetcher import BrevanHowardFetcher
 from fetchers.yintercept_fetcher import YInterceptFetcher
 from fetchers.ap_capital_fetcher import APCapitalFetcher
+from fetchers.bluecrest_capital_fetcher import BlueCrestCapitalFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -85,8 +86,9 @@ class FetcherManager:
             # DEShawFetcher(),
             # SchonfeldFetcher(),
             # BrevanHowardFetcher(),
-            YInterceptFetcher(),
-            APCapitalFetcher()
+            # YInterceptFetcher(),
+            # APCapitalFetcher(),
+            BlueCrestCapitalFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
