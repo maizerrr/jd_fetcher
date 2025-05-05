@@ -41,6 +41,7 @@ from fetchers.drw_fetcher import DRWFetcher
 from fetchers.deshaw_fetcher import DEShawFetcher
 from fetchers.schonfeld_fetcher import SchonfeldFetcher
 from fetchers.brevanhoward_fetcher import BrevanHowardFetcher
+from fetchers.yintercept_fetcher import YInterceptFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -82,7 +83,8 @@ class FetcherManager:
             # DRWFetcher(),
             # DEShawFetcher(),
             # SchonfeldFetcher(),
-            BrevanHowardFetcher()
+            # BrevanHowardFetcher(),
+            YInterceptFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
