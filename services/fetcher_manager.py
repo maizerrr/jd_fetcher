@@ -39,6 +39,7 @@ from fetchers.radix_trading_fetcher import RadixTradingFetcher
 from fetchers.panagora_fetcher import PanAgoraFetcher
 from fetchers.drw_fetcher import DRWFetcher
 from fetchers.deshaw_fetcher import DEShawFetcher
+from fetchers.schonfeld_fetcher import SchonfeldFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -78,7 +79,8 @@ class FetcherManager:
             # RadixTradingFetcher(),
             # PanAgoraFetcher(),
             # DRWFetcher(),
-            DEShawFetcher()
+            # DEShawFetcher(),
+            SchonfeldFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
