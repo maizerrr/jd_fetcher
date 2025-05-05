@@ -46,5 +46,5 @@ def create_app():
 
 if __name__ == '__main__':
     app = create_app()
-    # Timer(1, lambda: webbrowser.open('http://127.0.0.1:5000')).start()
+    Timer(1, lambda: webbrowser.open('http://127.0.0.1:5000')).start()
     app.run(debug=False)  # Change debug to False for production
