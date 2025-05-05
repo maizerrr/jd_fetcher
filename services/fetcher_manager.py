@@ -37,6 +37,7 @@ from fetchers.imc_trading_fetcher import IMCTradingFetcher
 from fetchers.engineersgate_fetcher import EngineersGateFetcher
 from fetchers.radix_trading_fetcher import RadixTradingFetcher
 from fetchers.panagora_fetcher import PanAgoraFetcher
+from fetchers.drw_fetcher import DRWFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -74,7 +75,8 @@ class FetcherManager:
             # IMCTradingFetcher(),
             # EngineersGateFetcher(),
             # RadixTradingFetcher(),
-            PanAgoraFetcher()
+            # PanAgoraFetcher(),
+            DRWFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
