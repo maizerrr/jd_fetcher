@@ -48,6 +48,7 @@ from fetchers.virtus_investment_fetcher import VirtusInvestmentPartnersFetcher
 from fetchers.hudson_river_trading_fetcher import HudsonRiverTradingFetcher
 from fetchers.point72_fetcher import Point72Fetcher
 from fetchers.two_sigma_fetcher import TwoSigmaFetcher
+from fetchers.bridgewater_fetcher import BridgewaterFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -96,7 +97,8 @@ class FetcherManager:
             # VirtusInvestmentPartnersFetcher(),
             # HudsonRiverTradingFetcher(),
             # Point72Fetcher(),
-            TwoSigmaFetcher()
+            # TwoSigmaFetcher(),
+            BridgewaterFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
