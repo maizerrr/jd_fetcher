@@ -40,6 +40,7 @@ from fetchers.panagora_fetcher import PanAgoraFetcher
 from fetchers.drw_fetcher import DRWFetcher
 from fetchers.deshaw_fetcher import DEShawFetcher
 from fetchers.schonfeld_fetcher import SchonfeldFetcher
+from fetchers.brevanhoward_fetcher import BrevanHowardFetcher
 
 logger = logging.getLogger(__name__)
 
@@ -80,7 +81,8 @@ class FetcherManager:
             # PanAgoraFetcher(),
             # DRWFetcher(),
             # DEShawFetcher(),
-            SchonfeldFetcher()
+            # SchonfeldFetcher(),
+            BrevanHowardFetcher()
         ]
         self.max_workers = 5 # Adjust the number of workers as needed
     
