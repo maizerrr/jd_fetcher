@@ -1,5 +1,7 @@
 import requests
 import logging
+import json
+from bs4 import BeautifulSoup
 from datetime import datetime
 from typing import List, Dict, Any
 from .base_fetcher import BaseFetcher
@@ -10,18 +12,20 @@ class DRWFetcher(BaseFetcher):
     def __init__(self):
         super().__init__(
             site_name="DRW",
-            url="https://www.drw.com/_next/data/1yGTclpSCHJEPY4c5Gt8q/en/work-at-drw/listings.json"
+            url="https://www.drw.com/work-at-drw/listings"
         )
 
-    def fetch_jobs(self) -> List[Dict[str, Any]]:
-        response = requests.get(self.url, headers=self.headers, timeout=self.timeout)
-        response.raise_for_status()
-        data = response.json()
-
+    def parse_jobs(self, html: str) -> List[Dict[str, Any]]:
+        soup = BeautifulSoup(html, 'html.parser')
+        script_tag = soup.find('script', id='__NEXT_DATA__')
+        if not script_tag:
+            raise ValueError("__NEXT_DATA__ script tag not found")
+        data = json.loads(script_tag.string)['props']
+        
         jobs_data = data.get('pageProps', {}).get('jobData', {}).get('en', [])
         
         if not jobs_data:
-            raise ValueError("No job data found in API response")
+            raise ValueError("No job data found in HTML script")
 
         jobs = []
         logger.info(f"Found {len(jobs_data)} jobs")
